@@ -38,12 +38,12 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:latest  # Use the official Nginx image
+        image: bitnami/nginx:latest
         ports:
-        - containerPort: 80  # Official Nginx image uses port 80 by default
+        - containerPort: 8443
         volumeMounts:
         - name: nginx-html
-          mountPath: /usr/share/nginx/html  # Mount to the default content directory in the official Nginx image
+          mountPath: /app
       volumes:
       - name: nginx-html
         configMap:
@@ -61,8 +61,8 @@ spec:
     app: nginx
   ports:
   - protocol: TCP
-    port: 80  # Match the container port in the official Nginx image
-    targetPort: 80
+    port: 443
+    targetPort: 8443
   type: ClusterIP
 
 ---
@@ -77,7 +77,7 @@ spec:
     kind: Service
     name: nginx-service
   port:
-    targetPort: 80
+    targetPort: 443
   tls:
     termination: edge
 
