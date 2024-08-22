@@ -16,7 +16,7 @@ data:
     <body>
         <h1>Hello from Nginx!</h1>
         <p>This is a simple Nginx deployment.</p>
-        <img src="https://cdn001.tintin.com/public/tintin/img/static/essentials/tintin-milou.png">
+        <img src="https://cdn001.tintin.com/public/tintin/img/static/essentials/tintin-milou.png" width="300" height="329">
     </body>
     </html>
 
