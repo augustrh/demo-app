@@ -16,6 +16,7 @@ data:
     <body>
         <h1>Hello from Nginx!</h1>
         <p>This is a simple Nginx deployment.</p>
+        Hi there!
     </body>
     </html>
 
