@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: nginx-html
+  name: nginx-html-push
   labels:
     app: nginx
 data:
@@ -24,7 +24,7 @@ data:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: nginx-deployment-push
   labels:
     app: nginx
 spec:
@@ -46,15 +46,15 @@ spec:
         - name: nginx-html
           mountPath: /app
       volumes:
-      - name: nginx-html
+      - name: nginx-html=push
         configMap:
-          name: nginx-html
+          name: nginx-html-push
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-service
+  name: nginx-service-push
   labels:
     app: nginx
 spec:
@@ -70,13 +70,13 @@ spec:
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  name: nginx-route
+  name: nginx-route-push
   labels:
     app: nginx
 spec:
   to:
     kind: Service
-    name: nginx-service
+    name: nginx-service-push
   port:
     targetPort: 8080
   tls:
