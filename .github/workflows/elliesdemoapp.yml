@@ -40,13 +40,13 @@ on:
 env:
   ACR_RESOURCE_GROUP: catsFleet
   AZURE_CONTAINER_REGISTRY: catsreg
-  CONTAINER_NAME: image-workflow-1752477026878
+  CONTAINER_NAME: image-workflow-1752477692389
   CLUSTER_NAME: tillysfleetau
   CLUSTER_RESOURCE_GROUP: catsFleet
   CLUSTER_RESOURCE_TYPE: Microsoft.containerservice/fleets
   DEPLOYMENT_MANIFEST_PATH: |
     ./manifest/kustomization.yaml
-  DOCKER_FILE: ./manifest/kustomization.yaml
+  DOCKER_FILE: Dockerfile
   BUILD_CONTEXT_PATH: ./
   NAMESPACE: default
   ENABLENAMESPACECREATION: false
